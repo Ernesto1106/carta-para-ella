@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nueva actualización disponible 💙</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+body {
+  background: linear-gradient(180deg, #141e30, #243b55);
+  color: white;
+}
+
+section {
+  min-height: 100vh;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fade 1s ease;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ffb6c1;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+.terminal {
+  font-family: monospace;
+  line-height: 1.7;
+}
+
+.highlight { color: #7fffd4; }
+
+.photos {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.photos img {
+  height: 220px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.question {
+  font-size: 2rem;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  padding: 18px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff69b4;
+  color: white;
+}
+
+.talk {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.response {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.4rem;
+  display: none;
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: pink;
+  animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1>Error 404: Amistad no encontrada 💙</h1>
+  <div class="card terminal">
+    Sistema: Analizando datos…<br>
+    Años conociéndonos: <span class="highlight">muchos</span><br>
+    Viajes juntos: <span class="highlight">✔</span><br>
+    Días normales pero especiales: <span class="highlight">✔✔✔</span><br>
+    Risas compartidas: <span class="highlight">incontables</span><br>
+    Sentimientos detectados: <span class="highlight">inesperados 😅</span>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    Lo nuestro empezó siendo amistad…<br><br>
+    viajes, rutina, chistes malos y conversaciones eternas.<br><br>
+    Y sin darme cuenta, te volviste mi persona favorita.
+  </div>
+</section>
+
+<section>
+  <h1>Recuerdos desbloqueados 📸</h1>
+  <div class="photos">
+    <img src="fotos/viaje1.jpg">
+    <img src="fotos/viaje2.jpg">
+    <img src="fotos/dia1.jpg">
+    <img src="fotos/dia2.jpg">
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    Intenté llamarlo costumbre.<br>
+    Intenté ignorarlo.<br><br>
+    Pero el sistema fue claro:<br>
+    <span class="highlight">esto ya no es solo amistad.</span>
+  </div>
+</section>
+
+<section>
+  <div class="question">¿Te gustaría ser mi novia? 💌</div>
+
+  <div class="buttons">
+    <button class="yes" onclick="yes()">Sí 💖</button>
+    <button class="talk" onclick="talk()">Hablemos 🫶</button>
+  </div>
+
+  <div class="response" id="response"></div>
+</section>
+
+<script>
+function yes() {
+  const r = document.getElementById("response");
+  r.style.display = "block";
+  r.innerHTML = "🎉 Nueva etapa desbloqueada 🎉<br>Prometo viajes, risas y hacer increíble lo cotidiano contigo 💙";
+  confetti();
+}
+
+function talk() {
+  const r = document.getElementById("response");
+  r.style.display = "block";
+  r.innerHTML = "💙 Gracias por escucharme.<br>Lo más importante es seguir caminando juntos.";
+}
+
+function confetti() {
+  for(let i=0;i<30;i++){
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random()*100 + "vw";
+    c.style.animationDuration = (Math.random()*2+2)+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3000);
+  }
+}
+</script>
+
+</body>
+</html>
